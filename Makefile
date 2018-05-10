@@ -1,6 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: male-gal <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/05/10 20:30:26 by male-gal          #+#    #+#              #
+#    Updated: 2018/05/10 20:31:43 by male-gal         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= fdf
 
-# src / obj files
 SRC		= main.c \
 		  display.c \
 		  console_outputs.c \
@@ -20,13 +31,11 @@ MLX_LIB	= $(addprefix $(MLX),mlx.a)
 MLX_INC	= -I ./mlx
 MLX_LNK	= -L ./mlx -l mlx -framework OpenGL -framework AppKit
 
-# ft library
 FT		= ./libft/
 FT_LIB	= $(addprefix $(FT),libft.a)
 FT_INC	= -I ./libft
 FT_LNK	= -L ./libft -l ft
 
-# directories
 SRCDIR	= ./src/
 INCDIR	= ./includes/
 OBJDIR	= ./obj/
@@ -58,3 +67,5 @@ fclean: clean
 	make -C $(FT) fclean
 
 re: fclean all
+
+.PHONY: all obj fclean clean re
