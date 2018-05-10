@@ -6,7 +6,7 @@
 /*   By: male-gal <male-gal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/28 15:36:11 by male-gal          #+#    #+#             */
-/*   Updated: 2018/05/09 23:45:35 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/05/10 20:39:56 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		deal_mouse(int key, int x, int y, t_print *print_sett)
 	mlx_clear_window(print_sett->mlx_ptr, print_sett->win_ptr);
 	if (key == 4)
 		print_sett->zoom++;
-	if (key == 5)
+	if (key == 5 && print_sett->zoom > 0)
 		print_sett->zoom--;
 	ft_process(print_sett);
 	return (0);
